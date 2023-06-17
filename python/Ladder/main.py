@@ -4,7 +4,6 @@ from ClothObjects import Rope
 from player import Player
 
 
-
 # NOTE: Maybe the player could grab the last two points of the rope (dangle strings) & place it into the ground quickly where he is standing. If the rope is not planted into the ground the player cannot climb therefore, if on the
 #       rope, he will fall off.
 
@@ -25,9 +24,7 @@ cloth2 = Rope(6, 15, 7)
 ropes = [cloth2]
 
 
-
 mouse_grabbed = False
-
 
 while True:
     screen.fill((0,0,255))
@@ -45,30 +42,20 @@ while True:
                 cloth2.grab_timer = True
 
 
-  
-
-
-
     if key[pygame.K_1]:
         mouse_grabbed = True
     else: 
         mouse_grabbed = False
 
 
-
-
-
     offset = width /2 + 50
     for cloth in ropes:
-       # offset -= 600
-        
 
         cloth.interia(player)
         cloth.verlet()
         cloth.set_position((offset, 0), (mx,my), player, mouse_grabbed)
         cloth.draw(screen, player)
         
-
 
     x_direction = "none"
     y_direction = "none"
