@@ -4,14 +4,16 @@ from ClothObjects import Rope
 from player import Player
 
 
-# NOTE: Maybe the player could grab the last two points of the rope (dangle strings) & place it into the ground quickly where he is standing. If the rope is not planted into the ground the player cannot climb therefore, if on the
-#       rope, he will fall off.
+# NOTE: Maybe the player could grab the last two points of the rope 
+# (dangle strings) & place it into the ground quickly where he is standing.
+# If the rope is not planted into the ground the player cannot climb therefore,
+# if on the rope, he will fall off.
 
 
 size = width,height = 700, 350
 screen = pygame.display.set_mode(size)
 Frame_Rate = pygame.time.Clock()
-pygame.display.set_caption("Complete Ladder")
+pygame.display.set_caption("Monster-Manic - Ladder Example")
 
 
 player = Player(100, height/2)

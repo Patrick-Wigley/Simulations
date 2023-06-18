@@ -3,14 +3,10 @@ import pygame
 
 class Player():
     def __init__(self, x,y):
-
         self.x = x
         self.y = y
 
-      
-
     def move(self, x_direction, y_direction, sprint):
-        
         speed = 5
         if sprint == True:
             speed = 9
@@ -27,12 +23,6 @@ class Player():
         elif y_direction == "down":
             self.y += speed
 
-
-        
-
-
-
     def draw(self, screen):
-
         pygame.draw.circle(screen, (0,0,0), (self.x, self.y), 5, 10)
 
