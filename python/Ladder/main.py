@@ -9,12 +9,20 @@ from player import Player
 # If the rope is not planted into the ground the player cannot climb therefore,
 # if on the rope, he will fall off.
 
+pygame.init()
+TEXT_LINES = [
+        "NOTE:",
+        "WASD to move dot/player",
+        "Click around bottom of ladder to provoke some inertia",
+        ]
+
 
 size = width,height = 700, 350
 screen = pygame.display.set_mode(size)
 Frame_Rate = pygame.time.Clock()
 pygame.display.set_caption("Monster-Manic - Ladder Example")
 
+key_font = pygame.font.SysFont("Verdana", 15)
 
 player = Player(100, height/2)
 x_direction = "none"
@@ -76,6 +84,15 @@ while True:
 
     player.move(x_direction, y_direction, sprint)
     player.draw(screen)
+
+
+    for i, line in enumerate(TEXT_LINES):
+        text = key_font.render(
+                        line,
+                        True,
+                        (255,0,0)
+                        )
+        screen.blit(text, (0, i*15))
 
 
     Frame_Rate.tick(80)

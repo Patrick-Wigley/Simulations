@@ -154,8 +154,8 @@ class Rope():
         for lines in self.lines:            
             if player.y > self.points[lines[0]].y * self.scale and player.y < self.points[lines[1]].y * self.scale :
             
-                self.points[lines[0]].colour = [255,0,255]
-                self.points[lines[1]].colour = [255,0,255]
+                self.points[lines[0]].colour = [0,0,0]
+                self.points[lines[1]].colour = [0,0,0]
             
             else:
                 self.points[lines[0]].colour = [135, 86, 56]
