@@ -33,6 +33,7 @@ while True:
     key = pygame.key.get_pressed()
     mx,my = pygame.mouse.get_pos()
 
+    mouse_grabbed = False
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -43,12 +44,9 @@ while True:
             if key[pygame.K_1]:
                 cloth2.grab_timer = True
 
-
-    if key[pygame.K_1]:
-        mouse_grabbed = True
-    else: 
-        mouse_grabbed = False
-
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_grabbed = True
+        
 
     offset = width /2 + 50
     for cloth in ropes:

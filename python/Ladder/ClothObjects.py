@@ -68,7 +68,7 @@ class Rope():
         self.quantity = quantity - 1    # AS INDEXS (STARTING AT ZERO)
         self.scale = scale
         self.spacing = spacing
-        self.points = create_points(quantity + 1, spacing)
+        self.points = create_points(quantity + 1)
         self.lines = create_connections(quantity + 1, spacing)
         self.last_index = find_last_index(self.points)       
         self.overall_len = 0
@@ -150,35 +150,17 @@ class Rope():
 
 
 
-
-           
-            
-
-
-
-
-
-
     def draw(self, screen, player):
-        
-
-
-        for lines in self.lines:
+        for lines in self.lines:            
+            if player.y > self.points[lines[0]].y * self.scale and player.y < self.points[lines[1]].y * self.scale :
             
-                if player.y > self.points[lines[0]].y * self.scale and player.y < self.points[lines[1]].y * self.scale :
-                
-                    self.points[lines[0]].colour = [255,0,255]
-                    self.points[lines[1]].colour = [255,0,255]
-                
-                else:
-                    self.points[lines[0]].colour = [135, 86, 56]
-                    self.points[lines[1]].colour = [135, 86, 56]
+                self.points[lines[0]].colour = [255,0,255]
+                self.points[lines[1]].colour = [255,0,255]
+            
+            else:
+                self.points[lines[0]].colour = [135, 86, 56]
+                self.points[lines[1]].colour = [135, 86, 56]
 
-
-
-
-                pygame.draw.line(screen, self.points[lines[0]].colour, (self.points[lines[0]].draw_point), (self.points[lines[1]].draw_point), 7)
-
-
-                pygame.draw.circle(screen, (0,0,0), (self.points[lines[0]].draw_point), 6, 12)
-                
+            pygame.draw.line(screen, self.points[lines[0]].colour, (self.points[lines[0]].draw_point), (self.points[lines[1]].draw_point), 7)
+            pygame.draw.circle(screen, (0,0,0), (self.points[lines[0]].draw_point), 6, 12)
+            
