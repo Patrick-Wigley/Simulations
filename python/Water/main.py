@@ -13,7 +13,7 @@ active_objects = []
 timer = 0
 click_boolean = True
 
-obj_img = pygame.image.load("FallingObject.png")
+obj_img = pygame.image.load("assets/FallingObject.png")
 
 target_height = 450
 height = target_height
