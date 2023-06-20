@@ -3,7 +3,7 @@ import sys, os
 import pygame.math as pymath
 
 pygame.init()
-size = 1280, 600
+size = 420, 600
 screen = pygame.display.set_mode(size)
 fps = pygame.time.Clock()
 pygame.display.set_caption("Water - Click anywhere above the line")
