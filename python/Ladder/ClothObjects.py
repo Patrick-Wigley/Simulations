@@ -77,7 +77,7 @@ class Rope():
 
 
 
-    def interia(self, player):
+    def interia(self):
         for _, point in enumerate(self.points):
             velocity_x = point.x - point.old_x
             velocity_y = point.y - point.old_y

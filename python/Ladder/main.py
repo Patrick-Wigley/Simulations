@@ -59,7 +59,7 @@ while True:
     offset = width /2 + 50
     for cloth in ropes:
 
-        cloth.interia(player)
+        cloth.interia()
         cloth.verlet()
         cloth.set_position((offset, 0), (mx,my), player, mouse_grabbed)
         cloth.draw(screen, player)
