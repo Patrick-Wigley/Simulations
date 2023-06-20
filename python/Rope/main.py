@@ -1,6 +1,7 @@
 import pygame,sys
 from ClothObjects import Main
 
+pygame.init()
 width,height = 800, 1000
 screen_size = (width, height)
 
@@ -14,9 +15,9 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            sys.exit
+            sys.exit()
+
     screen.fill((255,255,255))
-    
     mouse = pygame.mouse.get_pos()
     
     cloth.motion()
