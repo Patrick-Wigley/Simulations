@@ -2,8 +2,6 @@ import pygame,math,random
 import sys, os
 import pygame.math as pymath
 
-ASSETS_FOLDER = "assets"
-
 pygame.init()
 size = 1280, 600
 screen = pygame.display.set_mode(size)
@@ -15,7 +13,7 @@ active_objects = []
 timer = 0
 click_boolean = True
 
-obj_img = pygame.image.load(ASSETS_FOLDER, "FallingObject.png")
+obj_img = pygame.image.load("FallingObject.png")
 
 target_height = 450
 height = target_height
